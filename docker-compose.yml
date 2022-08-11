@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  backend:
+    driver: "bridge"
+
+services:
+    web:
+      build: .
+      command: sh -c "uvicorn app.main:app --host 0.0.0.0 --port 7770 --reload --log-level debug"
+      volumes:
+        - .:/code
+      ports:
+        - "8088:8088"
+      networks:
+        - backend

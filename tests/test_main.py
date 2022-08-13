@@ -49,4 +49,4 @@ async def test_translate_with_model_init(app_client_startup):
 
     resp = app_client_startup.post("/api/v1/translate/", data=json.dumps(data))
 
-    assert resp.status_code == 200
+    assert resp.status_code == status.HTTP_200_OK

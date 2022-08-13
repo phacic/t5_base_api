@@ -6,3 +6,6 @@ format: isort
 
 type_check:
 	mypy ./app ./tests
+
+test:
+	pytest --cov=app/

@@ -41,6 +41,12 @@ Execute the following command to apply `isort` and `black` formatting:
 
     docker-compose run --rm web make format
 
+### Tests
+
+Run test with `pytest` with the following:
+
+    docker-compose run --rm web make test
+
 ## Endpoints
 
 ### Translate

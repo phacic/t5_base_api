@@ -1,14 +1,18 @@
-from typing import Optional, List
+from typing import List, Optional
 
 from loguru import logger
-from transformers import pipeline, T5Tokenizer, T5Model, T5ForConditionalGeneration
+from transformers import (
+    PreTrainedTokenizer,
+    T5ForConditionalGeneration,
+    T5Tokenizer,
+    pipeline,
+)
 
 from app.core.config import settings
 from app.schema.translate import LangChoices, TranslateOut
 
 
 class Translator:
-
     def __init__(self):
         """
         translator class
@@ -17,18 +21,21 @@ class Translator:
         self.tokenizer_name = "t5-base"
 
         self._is_init = False
-        self.tokenizer: Optional[T5Tokenizer] = None
+        self.tokenizer: Optional[PreTrainedTokenizer] = None
         self.model: Optional[T5ForConditionalGeneration] = None
 
     def init_model(self):
         logger.debug("initializing model...")
         if not self._is_init:
-            self.tokenizer = T5Tokenizer(vocab_file=f"{settings.MODEL_DIR}/spiece.model") \
-                .from_pretrained(settings.MODEL_DIR, model_max_length=512)
+            self.tokenizer = T5Tokenizer(
+                vocab_file=f"{settings.MODEL_DIR}/spiece.model"
+            ).from_pretrained(settings.MODEL_DIR, model_max_length=512)
             self.model = T5ForConditionalGeneration.from_pretrained(settings.MODEL_DIR)
             self._is_init = True
 
-    def translate(self, input_text: str, *, source_lang: LangChoices, target_lang: LangChoices) -> List[TranslateOut]:
+    def translate(
+        self, input_text: str, *, source_lang: LangChoices, target_lang: LangChoices
+    ) -> List[TranslateOut]:
         """
         translate input_text from source_lang to target_lang
         :param source_lang: language for input text

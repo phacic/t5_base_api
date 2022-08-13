@@ -9,7 +9,7 @@ services:
       build: .
       command: sh -c "uvicorn app.main:app --host 0.0.0.0 --port 7770 --reload --log-level debug"
       volumes:
-        - .:/code
+        - .:/app
       ports:
         - "8088:8088"
       networks:

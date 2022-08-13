@@ -1,7 +1,7 @@
 import os
 import pathlib
-from typing import Optional
 from pathlib import Path
+from typing import Optional
 
 from pydantic import BaseSettings
 

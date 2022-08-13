@@ -16,6 +16,8 @@ Head [here](https://huggingface.co/t5-base/tree/main) and download the following
 - `config.json`
 - `spiece.model`
 
+For more info on the model, [check it out here](https://huggingface.co/t5-base).
+
 #### Docker
 
 Docker is required to run the app. If docker is not installed, go the

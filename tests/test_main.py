@@ -3,8 +3,6 @@ import json
 import pytest
 from fastapi import status
 
-from app.main import app
-
 
 @pytest.mark.asyncio
 async def test_root(app_client):

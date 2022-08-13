@@ -13,6 +13,7 @@ ARG ENV=dev
 
 RUN pip install poetry && \
     poetry config virtualenvs.create false && \
-    bash -c "if [ $ENV == 'dev' ] ; then poetry install --no-root ; else poetry install --no-root --no-dev ; fi"
+    poetry install
+#    bash -c "if [ $ENV == 'dev' ] ; then poetry install --no-root ; else poetry install --no-root --no-dev ; fi"
 
 COPY . /app/

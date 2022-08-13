@@ -130,3 +130,10 @@ dmypy.json
 
 # IDE
 .idea/
+
+# others
+/t5_models/tokenizer.json
+/t5_models/config.json
+/t5_models/spiece.model
+/t5_models/pytorch_model.bin
+.DS_Store

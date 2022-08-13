@@ -2,7 +2,7 @@
 name = "t5_base_api"
 version = "0.1.0"
 description = ""
-authors = ["Karlmichael <phacic@live.com>"]
+authors = ["Karlmichael <phacic@msn.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
@@ -13,9 +13,16 @@ uvicorn = {version = "<0.18.0", extras = ["standard"]}
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 ipython = "^8.4.0"
+transformers = "4.21.1 "
+#tensorflow = "2.9.1"
+torch = "1.12.1"
+sentencepiece = "0.1.97"
 
 [tool.poetry.dev-dependencies]
 black = "^22.6.0"
+isort = "^5.10.1"
+flake8 = "^5.0.4"
+mypy = "^0.971"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
